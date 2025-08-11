@@ -7,9 +7,10 @@ client.on('connect', () => {
         const data = {
             temperature: (20 + Math.random() * 10).toFixed(2),
             humidity: (50 + Math.random() * 10).toFixed(2),
+            soilTemperature: (18 + Math.random() * 7).toFixed(2),
             time: new Date().toISOString()
         };
         client.publish('sensor/data', JSON.stringify(data));
-        console.log(`📤 Data sent: ${JSON.stringify(data)}`);
-    }, 100);
+        console.log(`Data sent: ${JSON.stringify(data)}`);
+    }, 10000);
 });
