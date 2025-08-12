@@ -8,9 +8,14 @@ client.on('connect', () => {
             temperature: (20 + Math.random() * 10).toFixed(2),
             humidity: (50 + Math.random() * 10).toFixed(2),
             soilTemperature: (18 + Math.random() * 7).toFixed(2),
+            soilMoisture: (30 + Math.random() * 20).toFixed(2),
+            // lightIntensity: (100 + Math.random() * 400).toFixed(2),
+            // batteryLevel: (70 + Math.random() * 30).toFixed(2),
+            // ph: (6 + Math.random() * 2).toFixed(2),
+            // conductivity: (100 + Math.random() * 300).toFixed(2),
             time: new Date().toISOString()
         };
         client.publish('sensor/data', JSON.stringify(data));
         console.log(`Data sent: ${JSON.stringify(data)}`);
-    }, 10000);
+    }, 30000);
 });
